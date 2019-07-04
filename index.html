@@ -1,0 +1,110 @@
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login Page</title>
+    <!--Made with love by Mutiullah Samim -->
+
+    <link rel="stylesheet" href="bootstrap 4.3.1/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="jquery 3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.mCustomScrollbar.min.css">
+    <script type="text/javascript" src="jquery.mCustomScrollbar.min.js"></script>
+
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Sign In</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="username">
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            <input type="password" class="form-control" placeholder="password">
+                        </div>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Remember Me
+                        </div>
+                        <div class="form-group">
+                            <input id="signin" type="submit" value="Login" class="btn float-right login_btn">
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links" id="signup">
+                        Don't have an account?<a href="#">Sign Up</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Forgot your password?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDaf2iZarEjagbsMGGOlVwk4RShCqpsmIc",
+        authDomain: "chatapp-e95cb.firebaseapp.com",
+        databaseURL: "https://chatapp-e95cb.firebaseio.com",
+        projectId: "chatapp-e95cb",
+        storageBucket: "",
+        messagingSenderId: "1044728772261",
+        appId: "1:1044728772261:web:355c2a15c6ed45a0"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
+<script>
+    $(document).ready(function() {
+        $("#signup").click(function() {
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                //var errorCode = error.code;
+                //var errorMessage = error.message;
+                // ...
+            });
+        });
+    });
+
+    $("#signin").click(function() {
+        firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+        });
+    });
+</script>
+
+</html>
