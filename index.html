@@ -65,6 +65,7 @@
 </body>
 <!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#config-web-app -->
@@ -87,6 +88,19 @@
 <script>
     $(document).ready(function() {
         $("#signup").click(function() {
+            firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                //var errorCode = error.code;
+                //var errorMessage = error.message;
+                // ...
+            });
+        });
+    });
+</script>
+
+<script>
+    $(document).ready(function() {
+        $("#signin").click(function() {
             firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
                 // Handle Errors here.
                 //var errorCode = error.code;
