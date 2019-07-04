@@ -96,7 +96,8 @@
             });
         });
     });
-
+</script>
+<script>
     $(document).ready(function() {
         $("#signin").click(function() {
             firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
