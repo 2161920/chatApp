@@ -18,8 +18,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-
     <link rel="stylesheet" href="css/login.css">
 </head>
 
@@ -65,15 +63,8 @@
         </div>
     </div>
 </body>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#config-web-app -->
-
 <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
+    const firebaseConfig = {
         apiKey: "AIzaSyDaf2iZarEjagbsMGGOlVwk4RShCqpsmIc",
         authDomain: "chatapp-e95cb.firebaseapp.com",
         databaseURL: "https://chatapp-e95cb.firebaseio.com",
@@ -82,22 +73,8 @@
         messagingSenderId: "1044728772261",
         appId: "1:1044728772261:web:355c2a15c6ed45a0"
     };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
 </script>
 
-<script>
-    $(document).ready(function() {
-        $("#signin").click(function() {
-            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // ...
-            });
-        });
-    });
-</script>
 <script>
     $(document).ready(function() {
         $("#signup").click(function() {
